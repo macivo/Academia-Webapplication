@@ -1,6 +1,6 @@
 # Project "Academia": Software Documentation
 
-![Logo](..\images\baseline_school_black_48dp.png)
+![Logo](../images/baseline_school_black_48dp.png)
 
 ## Group 3
 
@@ -163,7 +163,7 @@ It will take time to get to know each other. It is feasible to develop only part
 
 This Use case shows how an administrator can manage modules.
 
-![UML Context Diagram](..\images\usecase_manage_modules.png)
+![UML Context Diagram](../images/usecase_manage_modules.png)
 
 
 | **Use Case:** Manage modules |
@@ -183,7 +183,7 @@ This Use case shows how an administrator can manage modules.
 ### 2.2 Professor manages module descriptions (in role of module coordinator)
 This Use case shows a teacher managing module description as module coordinator.
 
-![UML Context Diagram](..\images\usecase_module_description.png)
+![UML Context Diagram](../images/usecase_module_description.png)
 
 
 | **Use Case:** Manage module description |
@@ -202,7 +202,7 @@ This Use case shows a teacher managing module description as module coordinator.
 
 ### 2.3 Administrator manages modulerun
 
-![Use Case Diagram Students](..\images\usecase_admin_manage_modulesruns.png)
+![Use Case Diagram Students](../images/usecase_admin_manage_modulesruns.png)
 
 | **Use Case:** Administrator manage modulerun |
 |----|
@@ -220,7 +220,7 @@ This Use case shows a teacher managing module description as module coordinator.
 
 ### 2.4 Student enrolls to modulerun
 
-![Use Case Diagram Students](..\images\usecase_student.png)
+![Use Case Diagram Students](../images/usecase_student.png)
 
 
 | **Use Case:** Enrollment to modulerun |
@@ -239,7 +239,7 @@ This Use case shows a teacher managing module description as module coordinator.
 
 ### 2.5 Administrator creates and manages students
 
-![Use Case Diagram Students](..\images\usecase_manage_students.png)
+![Use Case Diagram Students](../images/usecase_manage_students.png)
 
 | **Use Case:** Create and manage students |
 |----|
@@ -257,7 +257,7 @@ This Use case shows a teacher managing module description as module coordinator.
 
 ### 2.6 Teacher adds/edits student grades
 
-![Use Case Diagram Students](..\images\usecase_teacher_manage_student_grade.png)
+![Use Case Diagram Students](../images/usecase_teacher_manage_student_grade.png)
 
 | **Use Case:** A teacher adds/edits student grades |
 |----|
@@ -287,7 +287,7 @@ modules and moduleruns. Each module can implement multiple moduleruns. The modul
 A teacher can see the moduleruns and set the grades for his/her moduleruns.
 Students can enroll to active moduleruns. A student can see his/her grades of each modulerun he/she is enrolled to.
 
-![DomainModel](..\images\domain_model.png)
+![DomainModel](../images/domain_model.png)
 
 
 <div style="page-break-after: always"></div>
@@ -299,7 +299,7 @@ This is a reduced class diagram containing the main packages. It also shows the 
 classes could be displayed - where necessary, the classes were reduced to provide a good overview.
 
 
-![UML Package Diagram](..\images\classes_packages.png)
+![UML Package Diagram](../images/classes_packages.png)
 
 
 <div style="page-break-after: always"></div>
@@ -313,7 +313,7 @@ This sequence diagram shows the POST request in the backend when a student enrol
 as this would be too extensive for this illustration.
 
 
-![UML System Sequence Diagram](..\images\sequence_diagram.png)
+![UML System Sequence Diagram](../images/sequence_diagram.png)
 
 <div style="page-break-after: always"></div>
 <div id="heading--5"/>
@@ -328,7 +328,7 @@ The frontend communicates with backend via ajax-call from jQuery library.
 For production purposes, a Tomcat web-server and a PostgreSQL database are used.
 For testing purposes, an embedded Jetty web server and the in-memory H2 database are used.
 
-![UML Deployment Diagram](..\images\deployment_diagram.png)
+![UML Deployment Diagram](../images/deployment_diagram.png)
 
 
 <div style="page-break-after: always"></div>
@@ -411,7 +411,7 @@ were tested as well in the same manner.
 <div id="heading--7-1"/>
 
 ### 7.1 Database-Design
-![Mock-up for the Loginscreen](..\images\UML_DatabaseDesign.png)
+![Mock-up for the Loginscreen](../images/UML_DatabaseDesign.png)
 
 The database contains 6 tables. The "teaching" table is a list of professors and module-runs,
 because a module-run may have more than a professor. A "student" table extends a "person" table with a matriculation number as attribute.
@@ -427,28 +427,28 @@ We use a simplistic User Interface-design. It mainly consists of yellow- and gra
 
 **Login Screen**
 
-![Mock-up for the Loginscreen](..\images\layout-1.png)
+![Mock-up for the Loginscreen](../images/layout-1.png)
 
 <div style="page-break-after: always"></div>
 
 **Students View**
 
-![Mock-up for the Loginscreen](..\images\layout-2.png)
+![Mock-up for the Loginscreen](../images/layout-2.png)
 
 Students can choose between their homescreen, called "My modules", and an enrollment view where they are able to enroll to
 additional modules. In the "My Modules"-view they are able to see past modules as well as the assigned grades.
 
-![Mock-up for the Loginscreen](..\images\layout-3.png)
+![Mock-up for the Loginscreen](../images/layout-3.png)
 
 <div style="page-break-after: always"></div>
 
 **Teachers View**
 
-![Mock-up for the Loginscreen](..\images\layout-4.png)
+![Mock-up for the Loginscreen](../images/layout-4.png)
 
 Teachers are able to assign grades to Students within their respective module runs.
 
-![Mock-up for the Loginscreen](..\images\layout-5.png)
+![Mock-up for the Loginscreen](../images/layout-5.png)
 
 Teachers with assigned role "module coordinator" are in addition to assigning grades able to change module
 descriptions.
@@ -457,7 +457,7 @@ descriptions.
 
 **Administrators View**
 
-![Mock-up for the Loginscreen](..\images\layout-6.png)
+![Mock-up for the Loginscreen](../images/layout-6.png)
 
 Administrators are able to create new module runs.
 
@@ -465,7 +465,7 @@ Administrators are able to create new module runs.
 
 **Design Guidelines**
 
-![Mock-up for the Loginscreen](..\images\layout-7.png)
+![Mock-up for the Loginscreen](../images/layout-7.png)
 
 <div style="page-break-after: always"></div>
 
@@ -475,30 +475,30 @@ The User Interface underwent minor changes during the development process.
 
 **Login Screen / Lougout Screen**
 
-![Mock-up for the Loginscreen](..\images\login_logout.png)
+![Mock-up for the Loginscreen](../images/login_logout.png)
 
 
 **Students View**
 
-![Mock-up for the student_view](..\images\student_view.png)
+![Mock-up for the student_view](../images/student_view.png)
 
 <div style="page-break-after: always"></div>
 
 **Teachers View**
 
-![Mock-up for the prof_view](..\images\prof_view.png)
+![Mock-up for the prof_view](../images/prof_view.png)
 
-![Mock-up for the prof_view](..\images\prof_view2.png)
+![Mock-up for the prof_view](../images/prof_view2.png)
 
 <div style="page-break-after: always"></div>
 
 **Administrators View**
 
-![Mock-up for the admin_view](..\images\admin_view.png)
+![Mock-up for the admin_view](../images/admin_view.png)
 
-![Mock-up for the admin_view](..\images\admin_view2.png)
+![Mock-up for the admin_view](../images/admin_view2.png)
 
-![Mock-up for the admin_view](..\images\admin_view3.png)
+![Mock-up for the admin_view](../images/admin_view3.png)
 
 <div style="page-break-after: always"></div>
 <div id="heading--8"/>
