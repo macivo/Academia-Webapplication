@@ -1,0 +1,24 @@
+<project name="Academia">
+    <version position="right"/>
+
+    <bannerLeft>
+        <name>Academia</name>
+    </bannerLeft>
+
+    <body>
+        <menu name="Product">
+            <item name="Vision" href="product/vision.html"/>
+            <item name="Software Documentation" href="product/software-documentation.html"/>
+        </menu>
+        <menu ref="reports"/>
+        <menu name="Teaching">
+            <item name="Achievements" href="teaching/achievements.html"/>
+        </menu>
+    </body>
+
+    <skin>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-fluido-skin</artifactId>
+        <version>1.9</version>
+    </skin>
+</project>

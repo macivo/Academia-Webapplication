@@ -1,0 +1,234 @@
+<!--
+ * Academia (c) 2021, Bern University of Applied Sciences, Switzerland
+ * Group 3 - PT3 BTI3022
+ * Developers: Nicole Herold, Rebecca Tabea Vogt, Mac Müller
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/md5.min.js"></script> <!-- Source from: https://github.com/blueimp/JavaScript-MD5 -->
+    <script type="module" src="js/main.js"></script>
+</head>
+<body>
+<header>
+    <div>
+        <img class="logo" src="./img/logo.png" alt="academia"/>
+    </div>
+    <div class="header_navi">
+        <nav id="navigation-main">
+            <ul>
+                <li id="students"><a>Students</a></li>
+                <li id="modules"><a>Modules</a></li>
+                <li id="enrollment"><a>Enrollment</a></li>
+                <li id="results"><a>My Results</a></li>
+                <li id="teacherModuleruns"><a>My Modules</a></li>
+                <li id="moduleruns"><a>Module Runs</a></li>
+                <li id="logout"><a>Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="information_wrapper">
+    <div class="information">
+        <img id="user_photo" alt="photo of user"/>
+        <p id="info_title"></p>
+        <p id="info_name" style="font-weight: bold"></p>
+        <p id="info_matNo_label" style="font-weight: bold">Mat-No.:</p>
+        <p id="info_matNo"></p>
+        <p style="font-weight: bold">Date of birth:</p>
+        <p id="info_dateOfBirth"></p>
+        <p style="font-weight: bold">Email:</p>
+        <p id="info_email"></p>
+    </div>
+</div>
+<!--All modal to show an error-->
+<div id="modal" class="modal">
+    <div id="modal_container" class="modal_container">
+        <h1 id="modal_title"></h1>
+        <p id="modal_text"></p>
+    </div>
+</div>
+
+<!--Any Templates will replace the main element-->
+<main>
+    <p>Loading, please wait...</p>
+</main>
+
+<footer>
+    <div class="footer">
+        <p>&copy; Academia Project Group 3 - PT3 BTI3022</p>
+    </div>
+</footer>
+
+<!-- Template for each page -->
+<template id="tpl-home">
+    <div>
+        <h2>Welcome to Academia</h2>
+    </div>
+</template>
+
+<template id="tpl-login">
+    <div>
+        <h3 id="error" style="max-width: max-content; margin: auto"></h3>
+        <form id="login-from">
+            <label for="username">Username: </label>
+            <input id="username" type="text" name="username" required/>
+            <label for="password">Password: </label>
+            <input id="password" type="password" name="password" required/>
+            <button type="submit" data-action="login" formnovalidate>Login</button>
+        </form>
+    </div>
+</template>
+
+<template id="tpl-modulerun-view">
+    <div>
+    </div>
+</template>
+
+<template id="tpl-module-view">
+    <div>
+    </div>
+</template>
+
+<template id="tpl-mymodule-view">
+    <div>
+    </div>
+</template>
+
+<template id="tpl-enrollment-view">
+    <div>
+    </div>
+</template>
+
+<template id="tpl-studentInModule-view">
+    <div>
+    </div>
+</template>
+
+<template id="tpl-new-module">
+    <div>
+        <h2>Create new module</h2>
+        <form id="newModuleForm">
+            <label>Module number</label>
+            <input data-field="number" required/>
+            <label>Module name</label>
+            <input data-field="name" required/>
+            <label>Description</label>
+            <input data-field="description" type="text" required/>
+            <select data-field="coordinator" name="coordinator" id="coordinator" required></select>
+            <label>ECTS</label>
+            <input data-field="ects" type="number" required/>
+            <label>Running</label>
+            <input data-field="running" type="boolean" value="false" disabled/>
+            <button id="cancel-module" class="secondary">Cancel</button>
+            <button id="create-module">Create new module</button>
+        </form>
+        <div id="message-module"></div>
+    </div>
+</template>
+
+	<template id="tpl-module-edit">
+		<div>
+			<h2>Edit module</h2>
+			<form id="editModuleForm">
+				<label>Module number</label>
+				<input id="editNumber" required/>
+				<label>Module name</label>
+				<input id="editName" required/>
+				<label>Description</label>
+				<input id="editDescription" type="text" required/>
+				<label>Module coordinator</label>
+				<select name="coordinator" id="editCoordinator"></select>
+				<label>ECTS</label>
+				<input id="editEcts" type="number" required/>
+				<button id="cancel_moduleEdit" class="secondary">Cancel</button>
+				<button id="create_moduleEdit">Edit module</button>
+			</form>
+			<div id="message-moduleEdit"></div>
+		</div>
+	</template>
+
+<template id="tpl-module-description-edit">
+    <div>
+        <h2>Edit module description</h2>
+        <form id="editDescriptionModuleForm">
+            <label>Module number</label>
+            <input id="editDesNumber" disabled/>
+            <label>Module name</label>
+            <input id="editDesName" disabled/>
+            <label>Description</label>
+            <input id="editDesDescription" type="textarea" required/>
+            <label>Module coordinator</label>
+            <input id="editDesCoordinator" type="text" disabled/>
+            <label>ECTS</label>
+            <input id="editDesEcts" type="number" disabled/>
+            <button id="cancel_moduleDesEdit" class="secondary">Cancel</button>
+            <button id="create_moduleDescEdit">Edit module description</button>
+        </form>
+        <div id="message-moduleDescriptionEdit"></div>
+    </div>
+</template>
+
+<template id="tpl-student-view">
+    <div>
+        <h2>List of students</h2>
+    </div>
+</template>
+
+<template id="tpl-logout">
+    <div>
+        <h2>Logout</h2>
+    </div>
+</template>
+
+<template id="tpl-new-student">
+    <div>
+        <h2>Create new student</h2>
+        <form id="newStudentForm">
+            <label for="gender">Gender</label>
+            <select data-field="gender" name="gender" id="gender">
+                <option value="male">male</option>
+                <option value="female" selected="selected">female</option>
+                <option value="divers">divers</option>
+            </select><br>
+            <label>First name</label>
+            <input data-field="firstname" required/>
+            <label>Last name</label>
+            <input data-field="lastname" required/>
+            <label>Date of birth</label>
+            <input data-field="date_of_birth" type="date" required/>
+            <label>matriculation number</label>
+            <input data-field="matriculation_number" required/>
+            <label>e-mail address</label>
+            <input data-field="email" type="email" required/>
+            <label>username</label>
+            <input data-field="username" required/>
+            <label>password</label>
+            <input data-field="password" type="password" required/>
+            <label for="role">role</label>
+            <select data-field="role" name="role" id="role">
+                <option value="student" selected="selected">student</option>
+            </select>
+            <label for="status">status</label>
+            <select data-field="status" name="status" id="status">
+                <option value="true" selected="selected">active</option>
+                <option value="false">inactive</option>
+            </select>
+            <br>
+            <button id="cancel" class="secondary">Cancel</button>
+            <button id="create-student">Create new student</button>
+        </form>
+        <div id="message"></div>
+    </div>
+</template>
+<template id="tpl-my-results">
+    <div>
+        <h2>My results</h2>
+    </div>
+</template>
+</body>
+</html>
