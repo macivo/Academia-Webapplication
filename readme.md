@@ -1,6 +1,6 @@
 # Project Academia
 
-#### ![](http://twemoji.maxcdn.com/36x36/1f4e3.png) [Link to ::: The software-documentation from developers](https://github.com/macivo/Academia-Webapplication/blob/main/src/site/markdown/product/software-documentation.md)
+#### ![](http://twemoji.maxcdn.com/36x36/1f4e3.png) [Please read here => Link to ::: The software-documentation from developers](https://github.com/macivo/Academia-Webapplication/blob/main/src/site/markdown/product/software-documentation.md)
 -----
 ## Content
 
